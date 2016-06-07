@@ -1,0 +1,34 @@
+{
+	"name": "CrossWiki",
+	"author": "Gary Guo",
+	"url": "https://github.com/nbdd0121/MW-CrossWiki",
+	"descriptionmsg": "crosswiki_desc",
+	"version": "0.0.1",
+	"license-name": "BSD-2-Clause",
+	"type": "specialpage",
+	"MessagesDirs": {
+		"CrossWiki": [
+			"i18n"
+		]
+	},
+	"Hooks": {
+		"CrossWikiReceive": "CrossWiki\\Hooks::onCrossWikiReceive"
+	},
+	"AutoloadClasses": {
+		"CrossWiki\\Hooks": "includes/Hooks.php",
+		"CrossWiki\\API": "includes/API.php",
+		"CrossWiki\\SpecialCrossWiki": "includes/SpecialCrossWiki.php",
+		"CrossWiki": "includes/CrossWiki.php"
+	},
+	"APIModules": {
+		"crosswiki": "CrossWiki\\API"
+	},
+	"SpecialPages": {
+		"CrossWiki": "CrossWiki\\SpecialCrossWiki"
+	},
+	"config": {
+		"CrossWiki": [],
+		"CrossWikiPrivKey": ""
+	},
+	"manifest_version": 1
+}

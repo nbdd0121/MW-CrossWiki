@@ -1,0 +1,12 @@
+{
+	"crosswiki_desc": "This extension provides an cross-wiki communication infrastructure",
+	"crosswiki": "Cross-wiki Communication Status",
+	"crosswiki_success": "* Connection to $1 succeeded",
+	"crosswiki_failure": "* Connection to $1 failed, reason: $2",
+
+	"apihelp-crosswiki-description": "CrossWiki communication API. This is intended to be called by another MediaWiki server configured to communicate with this server.",
+	"apihelp-crosswiki-param-data": "Payload of the message",
+	"apihelp-crosswiki-param-host": "Sender of the message",
+	"apihelp-crosswiki-param-signature": "Signature of the payload",
+	"apihelp-crosswiki-example-1": "Send a ping message"
+}
