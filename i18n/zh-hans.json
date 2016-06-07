@@ -2,7 +2,7 @@
 	"crosswiki_desc": "这个插件提供了跨Wiki通讯的基础架构",
 	"crosswiki": "跨Wiki状态",
 	"crosswiki_success": "成功",
-	"crosswiki_failure": "失败，错误：$3",
+	"crosswiki_failure": "失败，错误：$1",
 
 	"crosswiki_title_name": "名称",
 	"crosswiki_title_interwiki": "跨Wiki前缀",

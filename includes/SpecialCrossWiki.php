@@ -33,10 +33,10 @@ class SpecialCrossWiki extends \UnlistedSpecialPage {
             try {
                 $resp = \CrossWiki::send(['type' => 'ping'], $host);
                 $out .= \Html::element('td', ['style' => 'background-color: #afc;'],
-                    $this->msg('crosswiki_success', $val['name'], $host)->text());
+                    $this->msg('crosswiki_success')->text());
             } catch (\Exception $ex) {
                 $out .= \Html::element('td', ['style' => 'background: pink;'],
-                    $this->msg('crosswiki_failure', $val['name'], $host, $ex->getMessage())->text());
+                    $this->msg('crosswiki_failure', $ex->getMessage())->text());
             }
             $out .= \Html::closeElement('tr');
         }

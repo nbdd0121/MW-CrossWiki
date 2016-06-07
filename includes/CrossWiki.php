@@ -13,6 +13,21 @@ class CrossWiki {
             throw new \Exception('Host ' . $host . ' is not registered');
         }
 
+        $server = $wgCrossWikiHostnameOverride ? $wgCrossWikiHostnameOverride : $wgServerName;
+
+        // If the target is ourselves, skip all procedures and run receive hooks directly
+        if ($server === $host) {
+            $ret = null;
+
+            Hooks::run('CrossWikiReceive', [$data, $host, &$ret]);
+
+            if ($ret === null) {
+                throw new \Exception('Cannot respond to the request');
+            } else {
+                return $ret;
+            }
+        }
+
         $encData   = \FormatJSON::encode($data);
         $signature = '';
 
@@ -31,7 +46,7 @@ class CrossWiki {
                 'format'    => 'json',
                 'action'    => 'crosswiki',
                 'data'      => $encData,
-                'host'      => $wgCrossWikiHostnameOverride ? $wgCrossWikiHostnameOverride : $wgServerName,
+                'host'      => $server,
                 'signature' => base64_encode($signature),
             ],
         ]);

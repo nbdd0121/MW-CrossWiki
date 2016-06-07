@@ -2,7 +2,7 @@
 	"crosswiki_desc": "This extension provides an cross-wiki communication infrastructure",
 	"crosswiki": "CrossWiki Status",
 	"crosswiki_success": "Success",
-	"crosswiki_failure": "Failed, Error: $3",
+	"crosswiki_failure": "Failed, Error: $1",
 
 	"crosswiki_title_name": "Name",
 	"crosswiki_title_interwiki": "Interwiki Prefix",
