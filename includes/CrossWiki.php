@@ -5,6 +5,7 @@ class CrossWiki {
     public static function send($data, $host) {
         global $wgCrossWiki;
         global $wgCrossWikiPrivKey;
+        global $wgCrossWikiHostnameOverride;
         global $wgServerName;
 
         // Host must be in configuration
@@ -30,7 +31,7 @@ class CrossWiki {
                 'format'    => 'json',
                 'action'    => 'crosswiki',
                 'data'      => $encData,
-                'host'      => $wgServerName,
+                'host'      => $wgCrossWikiHostnameOverride ? $wgCrossWikiHostnameOverride : $wgServerName,
                 'signature' => base64_encode($signature),
             ],
         ]);

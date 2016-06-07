@@ -19,9 +19,9 @@ class SpecialCrossWiki extends \UnlistedSpecialPage {
         foreach ($wgCrossWiki as $host => $val) {
             try {
                 $resp = \CrossWiki::send(['type' => 'ping'], $host);
-                $output->addWikiMsg('crosswiki_success', $host);
+                $output->addWikiMsg('crosswiki_success', $val['name'], $host);
             } catch (\Exception $ex) {
-                $output->addWikiMsg('crosswiki_failure', $host, $ex->getMessage());
+                $output->addWikiMsg('crosswiki_failure', $val['name'], $host, $ex->getMessage());
             }
         }
 
