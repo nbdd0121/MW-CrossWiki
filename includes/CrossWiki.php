@@ -19,7 +19,7 @@ class CrossWiki {
         if ($server === $host) {
             $ret = null;
 
-            Hooks::run('CrossWikiReceive', [$data, $host, &$ret]);
+            \Hooks::run('CrossWikiReceive', [$data, $host, &$ret]);
 
             if ($ret === null) {
                 throw new \Exception('Cannot respond to the request');
@@ -41,7 +41,7 @@ class CrossWiki {
             throw new \Exception('Signature signing failed');
         }
 
-        $result = Http::post($wgCrossWiki[$host]['entrypoint'], [
+        $result = \Http::post($wgCrossWiki[$host]['entrypoint'], [
             'postData' => [
                 'format'    => 'json',
                 'action'    => 'crosswiki',
@@ -106,7 +106,7 @@ class CrossWiki {
 
         $ret = null;
 
-        Hooks::run('CrossWikiReceive', [$result, $host, &$ret]);
+        \Hooks::run('CrossWikiReceive', [$result, $host, &$ret]);
 
         if ($ret === null) {
             throw new \Exception('Cannot respond to the request');
